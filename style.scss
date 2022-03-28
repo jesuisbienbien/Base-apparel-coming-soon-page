@@ -36,6 +36,15 @@ body {
   font-family: "Josefin Sans", sans-serif;
   font-size: 1rem;
   background-color: var(--first-linear-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+}
+main {
+  max-width: 407px;
+  width: fit-content;
 }
 
 .container {
@@ -48,6 +57,9 @@ body {
     padding: 2rem 0;
     margin: 0 2rem;
   }
+  .hero-img-mobile {
+    width: 100%;
+  }
 }
 
 .main-content {
@@ -56,6 +68,8 @@ body {
   h1 {
     text-transform: uppercase;
     letter-spacing: 0.5rem;
+    line-height: 1.5;
+    padding: 0 1rem;
     margin-top: 1rem;
     span {
       font-weight: 300;
@@ -65,28 +79,48 @@ body {
 
   p {
     color: var(--desaturated-red);
-    font-weight: 400;
+    font-weight: 600;
+    line-height: 1.5;
     margin: 1rem 0;
   }
 
-  input {
-    width: 100%;
-    background-image: url(images/icon-arrow.svg);
-    background-repeat: no-repeat;
-    background-color: var(--desaturated-red);
-    background-position: right 20px bottom 13px;
-    border: solid 1px var(--desaturated-red);
-    border-radius: 5rem;
-    padding: 0.9rem 1.5rem;
-  }
-  input::placeholder {
-    color: var(--desaturated-red);
-    font-family: "Josefin Sans", sans-serif;
-    font-size: 0.9rem;
+  .email-input-wrapper {
+    position: relative;
+
+    input {
+      width: 100%;
+      background-image: url(images/icon-arrow.svg);
+      background-repeat: no-repeat;
+      background-position: right 20px bottom 13px;
+      border: solid 1px var(--desaturated-red);
+      border-radius: 5rem;
+      padding: 0.9rem 1.5rem;
+      margin-top: 1rem;
+    }
+    input::placeholder {
+      color: var(--desaturated-red);
+      font-family: "Josefin Sans", sans-serif;
+      font-size: 0.9rem;
+    }
+    button {
+      position: absolute;
+      top: 15px;
+      right: 0;
+      background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+      border: none;
+      border-radius: 5rem;
+      padding: 0.9rem 1.8rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    small {
+      display: none;
+    }
   }
 }
 
-.desktop-image {
+.hero-img-desktop {
   display: none;
 }
 
@@ -95,5 +129,33 @@ body {
   text-align: center;
 }
 .attribution a {
-  color: hsl(228, 45%, 44%);
+  color: var(--desaturated-red);
+}
+
+@media screen and (min-width: 1080px) {
+  .hero-img-mobile {
+    display: none;
+  }
+  .hero-img-desktop {
+    display: block;
+  }
+  main {
+    max-width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+  }
+  .container {
+  }
+  .main-content {
+    text-align: left;
+
+    h1 {
+      font-size: 4rem;
+      letter-spacing: 0.8rem;
+    }
+    p {
+      line-height: 2;
+    }
+  }
 }
