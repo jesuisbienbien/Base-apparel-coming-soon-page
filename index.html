@@ -29,27 +29,36 @@
         <img
           class="hero-img-mobile"
           src="images/hero-mobile.jpg"
-          alt="a photo of a woman"
+          alt="a woman"
         />
 
         <div class="main-content">
-          <h1><span>We're</span> coming soon</h1>
+          <h1>
+            <span class="thin-header">We're</span> coming <span>soon</span>
+          </h1>
           <p>
             Hello fellow shoppers! We're currently building our new fashion
             store. Add your email below to stay up-to-date with announcements
             and our launch deals.
           </p>
           <form action="/" class="email-input-wrapper">
-            <input type="email" name="email" placeholder="Email Address" />
-            <button>
+            <input
+              type="email"
+              name="email"
+              placeholder="Email Address"
+              class="error-outline"
+            />
+            <button id="submit-button">
               <img src="images/icon-arrow.svg" alt="" />
             </button>
-            <small>Please provide a valid email</small>
+            <small id="'error" class="error"
+              >Please provide a valid email</small
+            >
           </form>
         </div>
       </div>
       <div class="hero-img-desktop">
-        <img src="images/hero-desktop.jpg" alt="a photo of a woman" />
+        <img src="images/hero-desktop.jpg" alt="a woman" />
       </div>
     </main>
 
@@ -61,5 +70,6 @@
         >. Coded by <a href="#">Nguyen Nguyen</a>.
       </p>
     </footer>
+    <script src="index.js"></script>
   </body>
 </html>
