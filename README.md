@@ -30,7 +30,7 @@ Users should be able to:
 
 ### Screenshot
 
-![screenshot](images/screenshot.jpg)
+![screenshot](images/screenshot.png)
 
 ### Links
 
@@ -49,6 +49,27 @@ Users should be able to:
 - Vanilla Javascript
 
 ### What I learned
+
+_styling submit button on top of the input using absolute position_
+
+```css
+.email-input-wrapper {
+  position: relative;
+}
+button {
+  position: absolute;
+  top: 14px;
+  right: 0;
+  background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+  border: none;
+  border-radius: 5rem;
+  padding: 1.1rem 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+```
 
 ### Continued development
 
