@@ -167,15 +167,15 @@ button:hover {
   background-image: url(images/icon-error.svg);
   background-repeat: no-repeat;
   background-position: top 10px right 90px;
-  border: solid 3px var(--soft-red);
+  border: solid 2.5px var(--soft-red);
 }
 
 .error {
   visibility: hidden;
   color: var(--soft-red);
-  position: relative;
-  top: 0.5rem;
-  left: 0;
+  position: absolute;
+  bottom: -20px;
+  left: 35px;
 }
 
 .hero-img-desktop {
@@ -183,6 +183,7 @@ button:hover {
 }
 
 .attribution {
+  margin-top: 1rem;
   font-size: 11px;
   text-align: center;
 }
@@ -231,6 +232,11 @@ button:hover {
   }
   .main-content p {
     line-height: 2;
+  }
+  .error {
+    position: relative;
+    top: 0.5rem;
+    left: 25px;
   }
 }
 /*# sourceMappingURL=style.css.map */
