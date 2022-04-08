@@ -1,15 +1,12 @@
 const button = document.getElementById("submit-button");
-const userInput = document.getElementById("user-input");
 const errorMessage = document.getElementById("error");
+const form = document.getElementById("form");
 
-
-
-
-function validateEmail() {
+function validateEmail(valueEntered) {
     const emailReg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-    if(userInput.value === "" | userInput.value === null){
+    if(valueEntered === "" | valueEntered === null){
         return false;
-    } else if(!(userInput.value.match(emailReg))){
+    } else if(!(valueEntered.match(emailReg))){
         return false;
     } else {
         return true;
@@ -19,20 +16,30 @@ function alertSuccess(){
     alert("Congratulations! You have successfully signed up for our newsletter.");
 }
 
-button.addEventListener("click", (e) => {
+
+form.addEventListener("submit", (e) => {
     e.preventDefault();
-    let timeout;
+    
+    const valueEntered = e.target.email.value;
+
     //when button is clicked, remove error class, background error icon and error message
-    userInput.classList.remove("error-outline");
+    e.target.email.classList.remove("error-outline");
     errorMessage.style.visibility="hidden";
     
-   if(validateEmail()){
-       timeout = setTimeout(alertSuccess, 100);
-       userInput.value="";
-   } else {
-    userInput.classList.add("error-outline");
-    //error msg shows up
-    errorMessage.style.visibility="visible";
-   }
+
+    if(validateEmail(valueEntered)){
+        e.target.email.value="";
+        alertSuccess();
+        
+    } else {
+        e.target.email.classList.add("error-outline");
+        
+        //error msg shows up
+        errorMessage.style.visibility="visible";
+   
+    }
+    
 
 })
+
+
